@@ -124,7 +124,7 @@ export default function About() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 text-center"
+                    className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 text-center hover:border-cyan-400/40 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]"
                   >
                     {item}
                   </div>

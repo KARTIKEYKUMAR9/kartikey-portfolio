@@ -1,48 +1,30 @@
-// export const projects = [
-//   {
-//     id: 1,
-//     title: "Portfolio Website",
-//     description:
-//       "Modern futuristic portfolio built with React, Vite, Tailwind CSS and Framer Motion.",
-
-//     tech: ["React", "Tailwind", "Framer Motion"],
-
-//     github: "https://github.com/yourusername/portfolio",
-
-//     live: "https://portfolio-demo.vercel.app",
-//   },
-
-//   {
-//     id: 2,
-//     title: "Mini LinkedIn",
-
-//     description:
-//       "Social networking platform with authentication, posts, comments and likes.",
-
-//     tech: ["React", "Node.js", "MongoDB"],
-
-//     github: "https://github.com/yourusername/mini-linkedin",
-
-//     live: "https://mini-linkedin-demo.vercel.app",
-//   },
-
-//   {
-//     id: 3,
-//     title: "IMDb Clone",
-
-//     description:
-//       "Movie browsing application with search, routing and API integration.",
-
-//     tech: ["React", "JavaScript", "REST API"],
-
-//     github: "https://github.com/yourusername/imdb-clone",
-
-//     live: "https://imdb-demo.vercel.app",
-//   },
-// ];
 export const projects = [
   {
     id: 1,
+    title: "Portfolio Website",
+
+    category: "Frontend",
+
+    description:
+      "Modern futuristic portfolio built using React, Vite, Tailwind CSS, and Framer Motion.",
+
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+
+    image: "/projects/portfolio.jpg",
+
+    github:
+      "https://github.com/KARTIKEYKUMAR9/kartikey-portfolio",
+
+    live:
+      "https://kartikey-portfolio-alpha.vercel.app/",
+  },
+
+  {
+    id: 2,
     title: "Mini LinkedIn",
     category: "Full Stack",
 
@@ -64,31 +46,7 @@ export const projects = [
       "https://github.com/KARTIKEYKUMAR9",
 
     live:
-      "https://your-demo-url.vercel.app",
-  },
-
-  {
-    id: 2,
-    title: "Portfolio Website",
-
-    category: "Frontend",
-
-    description:
-      "Modern futuristic portfolio built using React, Vite, Tailwind CSS, and Framer Motion.",
-
-    technologies: [
-      "React",
-      "Tailwind CSS",
-      "Framer Motion",
-    ],
-
-    image: "/projects/portfolio.jpg",
-
-    github:
-      "https://github.com/KARTIKEYKUMAR9",
-
-    live:
-      "https://your-portfolio.vercel.app",
+      "https://mini-linkedin-frontend-mocha.vercel.app/",
   },
 
   {
@@ -109,9 +67,34 @@ export const projects = [
     image: "/projects/imdb.jpg",
 
     github:
-      "https://github.com/KARTIKEYKUMAR9",
+      "https://github.com/KARTIKEYKUMAR9/imdb-fe",
 
     live:
       "https://your-demo-url.vercel.app",
   },
+  {
+  id: 4,
+
+  title: "Paste App",
+
+  category: "Frontend",
+
+  description:
+    "A modern note and paste management application that allows users to create, edit, search, copy, and organize text snippets efficiently. Built with React and Redux, it provides a seamless experience for managing notes, code snippets, and important content.",
+
+  technologies: [
+    "React",
+    "Redux Toolkit",
+    "React Router",
+    "Tailwind CSS",
+    "JavaScript",
+    "Local Storage",
+  ],
+
+  github:
+    "https://github.com/KARTIKEYKUMAR9/Paste-App",
+
+  live:
+    "https://paste-app-beta-lime.vercel.app",
+}
 ];
