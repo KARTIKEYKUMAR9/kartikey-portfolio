@@ -5,7 +5,7 @@ import {
   FaFileDownload,
 } from "react-icons/fa";
 
-import resume from "../../assets/resume.pdf";
+import resume from "../../assets/Kartikey_Kumar_Resume.pdf";
 
 export default function ContactCTA() {
   return (

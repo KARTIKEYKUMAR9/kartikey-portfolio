@@ -19,7 +19,7 @@ import {
 
 import { profile } from "../../data/profile";
 import profileImage from "../../assets/images/profile.jpg";
-import resume from "../../assets/resume.pdf";
+import resume from "../../assets/Kartikey_Kumar_Resume.pdf";
 
 const floatingIcons = [
   {
