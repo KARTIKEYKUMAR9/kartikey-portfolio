@@ -23,55 +23,89 @@ export const projects = [
       "https://kartikey-portfolio-alpha.vercel.app/",
   },
 
+  // {
+  //   id: 2,
+  //   title: "Mini LinkedIn",
+  //   category: "Full Stack",
+
+  //   description:
+  //     "A social networking platform where users can register, login, create posts, like posts, comment, and manage profiles.",
+
+  //   technologies: [
+  //     "React",
+  //     "Node.js",
+  //     "Express",
+  //     "MongoDB",
+  //     "JWT",
+  //     "Tailwind CSS",
+  //   ],
+
+  //   image: "/projects/linkedin.jpg",
+
+  //   github:
+  //     "https://github.com/KARTIKEYKUMAR9",
+
+  //   live:
+  //     "https://mini-linkedin-frontend-mocha.vercel.app/",
+  // },
+
+  // {
+  //   id: 3,
+  //   title: "IMDb Clone",
+
+  //   category: "Frontend",
+
+  //   description:
+  //     "Movie browsing application with API integration, routing, search, and responsive UI.",
+
+  //   technologies: [
+  //     "React",
+  //     "REST API",
+  //     "JavaScript",
+  //   ],
+
+  //   image: "/projects/imdb.jpg",
+
+  //   github:
+  //     "https://github.com/KARTIKEYKUMAR9/imdb-fe",
+
+  //   live:
+  //     "https://your-demo-url.vercel.app",
+  // },
+
   {
     id: 2,
-    title: "Mini LinkedIn",
+    title: "Kalpa Labdhi",
     category: "Full Stack",
-
     description:
-      "A social networking platform where users can register, login, create posts, like posts, comment, and manage profiles.",
-
+      "Responsive financial services website focused on clear and user-friendly wealth planning.",
     technologies: [
       "React",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT",
       "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "SQLite",
     ],
-
-    image: "/projects/linkedin.jpg",
-
-    github:
-      "https://github.com/KARTIKEYKUMAR9",
-
-    live:
-      "https://mini-linkedin-frontend-mocha.vercel.app/",
+    image: "/projects/kalpa-labdhi.jpg",
+    github: "",
+    live: "https://kalpalabdhi.com/",
   },
 
   {
     id: 3,
-    title: "IMDb Clone",
-
+    title: "Ethos Investment Adviser",
     category: "Frontend",
-
     description:
-      "Movie browsing application with API integration, routing, search, and responsive UI.",
-
+      "Responsive investment advisory website with a clean and insight-led user experience.",
     technologies: [
       "React",
-      "REST API",
-      "JavaScript",
+      "Tailwind CSS",
     ],
-
-    image: "/projects/imdb.jpg",
-
-    github:
-      "https://github.com/KARTIKEYKUMAR9/imdb-fe",
-
-    live:
-      "https://your-demo-url.vercel.app",
+    image: "/projects/ethos-adviser.jpg",
+    github: "",
+    live: "https://ethosadviser.com/",
   },
+
   {
   id: 4,
 
