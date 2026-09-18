@@ -1,8 +1,8 @@
-import Layout from "../components/layout/Layout";
+import { motion } from "framer-motion";
 import { FaGraduationCap, FaBriefcase, FaCode } from "react-icons/fa";
 
+import Layout from "../components/layout/Layout";
 import PageWrapper from "../components/common/PageWrapper";
-
 import SEO from "../components/common/SEO";
 
 export default function About() {
@@ -12,61 +12,72 @@ export default function About() {
         title="About | Kartikey Kumar"
         description="Learn more about Kartikey Kumar, Frontend Developer, MCA graduate, and software engineer passionate about modern web development."
       />
-      <PageWrapper>
-        <section className="relative py-28 px-6">
-          <div className="max-w-6xl mx-auto">
-            {/* Heading */}
 
-            <div className="text-center">
+      <PageWrapper>
+        <section className="py-28 px-6">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <span className="text-cyan-400 uppercase tracking-widest">
                 About Me
               </span>
 
-              <h1 className="mt-4 text-5xl md:text-6xl font-bold">
-                Turning Ideas Into
-                <span className="text-cyan-400"> Digital Experiences</span>
+              <h1 className="mt-4 text-4xl md:text-5xl font-bold">
+                Building Modern Digital Experiences
               </h1>
 
-              <p className="mt-8 text-slate-400 max-w-3xl mx-auto leading-8 text-lg">
-                I'm Kartikey Kumar, an aspiring Software Engineer and Full Stack Developer focused on building responsive, scalable, and user-centric web applications. Currently working as a Frontend Developer, I combine frontend expertise with backend knowledge to create complete digital solutions.
+              <p className="mt-8 text-slate-400 leading-8 text-lg max-w-4xl">
+                I'm a Full Stack Developer with professional experience as a
+                Frontend Developer at Meon Technologies Private Limited. I
+                specialize in building responsive user interfaces and robust web
+                applications, combining frontend excellence with backend
+                development, APIs, and databases — recently rebuilding this very
+                portfolio into a full-stack platform with a Node/Express +
+                MongoDB backend, a Gemini-powered AI assistant, and a private
+                admin dashboard with live analytics. With an MCA from Galgotias
+                University, I am passionate about continuous learning, solving
+                real-world problems, and creating high-quality digital
+                experiences.
               </p>
-            </div>
+            </motion.div>
 
             {/* Cards */}
 
-            <div className="grid md:grid-cols-3 gap-8 mt-20">
-              <div className="bg-slate-900/60 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
-                <FaBriefcase className="text-5xl text-cyan-400" />
+            <div className="grid md:grid-cols-3 gap-6 mt-16">
+              <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-500/40 transition">
+                <FaBriefcase className="text-cyan-400 text-4xl" />
 
-                <h3 className="mt-5 text-2xl font-semibold">Experience</h3>
+                <h3 className="mt-5 text-xl font-semibold">Experience</h3>
 
-                <p className="mt-4 text-slate-400 leading-7">
-                  Currently working as a Frontend Developer at Meon Technologies
-                  Private Limited, contributing to scalable web applications and
-                  modern user interfaces.
+                <p className="mt-3 text-slate-400">
+                  Frontend Developer at Meon Technologies, building scalable and
+                  responsive interfaces.
                 </p>
               </div>
 
-              <div className="bg-slate-900/60 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
-                <FaGraduationCap className="text-5xl text-cyan-400" />
+              <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-500/40 transition">
+                <FaGraduationCap className="text-cyan-400 text-4xl" />
 
-                <h3 className="mt-5 text-2xl font-semibold">Education</h3>
+                <h3 className="mt-5 text-xl font-semibold">Education</h3>
 
-                <p className="mt-4 text-slate-400 leading-7">
+                <p className="mt-3 text-slate-400">
                   Master of Computer Applications (MCA) from Galgotias
-                  University (2022 – 2024), with a strong foundation in software
-                  development and problem solving.
+                  University.
                 </p>
               </div>
 
-              <div className="bg-slate-900/60 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
-                <FaCode className="text-5xl text-cyan-400" />
+              <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-500/40 transition">
+                <FaCode className="text-cyan-400 text-4xl" />
 
-                <h3 className="mt-5 text-2xl font-semibold">Development</h3>
+                <h3 className="mt-5 text-xl font-semibold">Development</h3>
 
-                <p className="mt-4 text-slate-400 leading-7">
-                  Specialized in React.js, JavaScript, Redux, Tailwind CSS, API
-                  Integration, and building high-performance web applications.
+                <p className="mt-3 text-slate-400">
+                  Passionate about React, JavaScript, modern UI development, and
+                  web performance.
                 </p>
               </div>
             </div>
@@ -107,28 +118,6 @@ export default function About() {
                     on production-grade applications and business workflows.
                   </p>
                 </div>
-              </div>
-            </div>
-
-            {/* Strengths */}
-
-            <div className="mt-24">
-              <h2 className="text-4xl font-bold">Core Strengths</h2>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-                {[
-                  "Problem Solving",
-                  "Quick Learner",
-                  "Team Collaboration",
-                  "UI Development",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="bg-slate-900/60 border border-white/10 rounded-2xl p-6 text-center hover:border-cyan-400/40 hover:shadow-[0_0_40px_rgba(34,211,238,0.15)]"
-                  >
-                    {item}
-                  </div>
-                ))}
               </div>
             </div>
           </div>

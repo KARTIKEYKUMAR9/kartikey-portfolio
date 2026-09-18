@@ -5,14 +5,14 @@ import {
   FaFileDownload,
 } from "react-icons/fa";
 
+import { Link } from "react-router-dom";
+
 import resume from "../../assets/Kartikey_Kumar_Resume.pdf";
 
 export default function ContactCTA() {
   return (
     <section className="py-28 px-6">
-
       <div className="max-w-5xl mx-auto">
-
         <div
           className="
             relative
@@ -33,7 +33,6 @@ export default function ContactCTA() {
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
 
           <div className="relative z-10 text-center">
-
             <span className="text-cyan-400 uppercase tracking-widest">
               Contact
             </span>
@@ -43,28 +42,27 @@ export default function ContactCTA() {
             </h2>
 
             <p className="mt-6 text-slate-400 max-w-2xl mx-auto leading-8">
-              I'm always open to discussing new opportunities,
-              innovative projects, and collaborations.
+              I'm always open to discussing new opportunities, innovative
+              projects, and collaborations.
             </p>
 
             {/* Buttons */}
 
             <div className="flex flex-wrap justify-center gap-4 mt-10">
-
-              <a
-                href="mailto:kartikeyk91@gmail.com"
+              <Link
+                to="/contact"
                 className="
-                  flex items-center gap-3
-                  px-6 py-4
-                  rounded-xl
-                  bg-cyan-500
-                  hover:bg-cyan-400
-                  transition
-                "
+    flex items-center gap-3
+    px-6 py-4
+    rounded-xl
+    bg-cyan-500
+    hover:bg-cyan-400
+    transition
+  "
               >
                 <FaEnvelope />
-                Email Me
-              </a>
+                Contact Me
+              </Link>
 
               <a
                 href="https://www.linkedin.com/in/kartikey-kumar2002/"
@@ -115,15 +113,10 @@ export default function ContactCTA() {
                 <FaFileDownload />
                 Resume
               </a>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -5,7 +5,6 @@ export const experiences = [
     role: "Frontend Developer",
     startDate: "Sep 2025",
     endDate: "Present",
-
     technologies: [
       "React",
       "JavaScript",
@@ -13,7 +12,6 @@ export const experiences = [
       "Tailwind CSS",
       "REST APIs",
     ],
-
     responsibilities: [
       "Developed responsive and user-friendly web interfaces.",
       "Integrated APIs and business workflows.",

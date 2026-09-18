@@ -6,7 +6,6 @@ import FeaturedProjects from "../components/home/FeaturedProjects";
 import ExperiencePreview from "../components/home/ExperiencePreview";
 import ContactCTA from "../components/home/ContactCTA";
 import PageWrapper from "../components/common/PageWrapper";
-import { Helmet } from "react-helmet-async";
 import Reveal from "../components/common/Reveal";
 
 import SEO from "../components/common/SEO";

@@ -18,6 +18,9 @@ export const skillCategories = [
       "Node.js",
       "Express.js",
       "REST APIs",
+      "JWT",
+      "Nodemailer",
+      "Google Gemini API",
     ],
   },
 
@@ -27,17 +30,19 @@ export const skillCategories = [
       "MongoDB",
       "MySQL",
       "Mongoose",
+      "SQLite",
     ],
   },
 
   {
-    title: "Tools",
+    title: "Tools & Services",
     skills: [
       "Git",
       "GitHub",
       "Postman",
       "Vite",
       "VS Code",
+      "Cloudinary",
     ],
   },
 ];
