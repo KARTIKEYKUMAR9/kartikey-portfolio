@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { to: "/admin/conversations", label: "Conversations" },
   { to: "/admin/stats", label: "Portfolio Stats" },
   { to: "/admin/ai", label: "AI Copilot" },
+  { to: "/admin/settings", label: "Settings" },
 ];
 
 function AdminLayout() {

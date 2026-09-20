@@ -54,13 +54,6 @@ Frontend Developer — Meon Technologies Private Limited (Sep 2025 – Present)
    Live: kartikey-portfolio-alpha.vercel.app
    Code: github.com/KARTIKEYKUMAR9/kartikey-portfolio
 
-2. IMDb Frontend Clone
-   Stack: HTML, CSS, Tailwind CSS, JavaScript, React.js, Fetch API
-   A responsive movie browsing app with live API data, search, movie details, and
-   dynamic routing.
-   Live: imdb-sigma-self.vercel.app
-   Code: github.com/KARTIKEYKUMAR9/imdb-fe
-
 === SKILLS ===
 Frontend: HTML, CSS, Tailwind CSS, JavaScript (ES6+), React.js, Redux Toolkit,
   React Router, jQuery, Fetch API
@@ -74,6 +67,21 @@ MCA — Galgotias University (2024)
 
 === LANGUAGES ===
 English, Hindi
+
+=== RELOCATION & WORK PREFERENCES ===
+Kartikey is open to relocating anywhere in India for the right opportunity. His willingness
+depends on a balanced view of the role as a whole:
+- Job Role & Career Growth: the position should align with his skills and long-term goals,
+  with room to learn and advance.
+- Compensation & Benefits: the package should be competitive for the role and the new
+  location's cost of living.
+- Work Culture & Environment: a respectful, inclusive, collaborative workplace.
+He's flexible and happy to discuss relocation once he has a clear picture of the role and
+the organization.
+
+=== NOTICE PERIOD ===
+Kartikey's current notice period is 1 month. He is open to negotiating an earlier joining
+date depending on the urgency of the requirement, in coordination with his current employer.
 
 === GUIDANCE FOR RESPONSES ===
 - If asked "Is Kartikey open to opportunities?" — respond positively that he is open

@@ -240,7 +240,7 @@ function AIAssistant() {
 
       {/* Chat card */}
       {isOpen && (
-        <div className="w-[22rem] sm:w-96 h-[32rem] bg-white rounded-2xl shadow-2xl shadow-black/20 flex flex-col overflow-hidden">
+        <div className="w-[calc(100vw-3rem)] sm:w-96 h-[70vh] max-h-[32rem] sm:h-[32rem] bg-white rounded-2xl shadow-2xl shadow-black/20 flex flex-col overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3.5 bg-gradient-to-r from-cyan-500 to-cyan-400">
             <div className="flex items-center gap-3">

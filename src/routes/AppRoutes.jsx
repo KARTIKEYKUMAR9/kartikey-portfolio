@@ -17,6 +17,8 @@ import AdminConversations from "../pages/admin/AdminConversations";
 import AdminNotFound from "../pages/admin/AdminNotFound";
 import AdminStats from "../pages/admin/AdminStats";
 import AdminAI from "../pages/admin/AdminAI";
+import AdminSettings from "../pages/admin/AdminSettings";
+
 
 export default function AppRoutes() {
   return (
@@ -37,6 +39,7 @@ export default function AppRoutes() {
           <Route path="/admin/conversations" element={<AdminConversations />} />
           <Route path="/admin/stats" element={<AdminStats />} />
           <Route path="/admin/ai" element={<AdminAI />} />
+          <Route path="/admin/settings" element={<AdminSettings />} />
           <Route path="/admin/*" element={<AdminNotFound />} />
         </Route>
       </Route>

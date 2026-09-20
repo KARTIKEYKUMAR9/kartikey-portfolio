@@ -62,6 +62,20 @@ export async function getMe(req, res) {
   }
 }
 
+// Lists every admin account — no passwords, obviously. Exists so the
+// create-admin page can show "who already has access" before you add
+// someone. Without this, creating a second admin means either remembering
+// who you already added or querying Mongo directly to check.
+export async function listAdmins(req, res) {
+  try {
+    const admins = await Admin.find().select("-password").sort({ createdAt: 1 });
+    return res.status(200).json({ success: true, admins });
+  } catch (err) {
+    console.error("listAdmins error:", err);
+    return res.status(500).json({ error: "Could not fetch admin accounts." });
+  }
+}
+
 // Creates a new admin account. Protected by requireAuth in the routes file —
 // only someone who is ALREADY logged in as an admin can create another one.
 // There is no public registration route anywhere in this app, by design.
