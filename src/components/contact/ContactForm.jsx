@@ -5,6 +5,8 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -82,7 +84,7 @@ export default function ContactForm() {
       });
 
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/contact`,
+        `${API_URL}/api/contact`,
         {
           method: "POST",
           headers: {

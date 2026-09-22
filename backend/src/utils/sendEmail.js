@@ -9,6 +9,13 @@ const transporter = nodemailer.createTransport({
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  // Nodemailer's default timeouts are generous enough to leave a request
+  // hanging for a long time if Gmail's SMTP is slow to respond or an
+  // outbound port is throttled. Bounding them means a real failure shows
+  // up in the logs within seconds instead of minutes.
+  connectionTimeout: 10000,
+  greetingTimeout: 10000,
+  socketTimeout: 15000,
 });
 
 // contactController validates length and type, but never escapes HTML —

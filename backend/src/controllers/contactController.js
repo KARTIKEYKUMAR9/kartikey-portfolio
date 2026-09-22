@@ -54,18 +54,21 @@ export const createContact = async (req, res) => {
       message: message.trim(),
     });
 
-    try {
-      await sendContactEmail({
-        name: contact.name,
-        email: contact.email,
-        subject: contact.subject,
-        message: contact.message,
-      });
-
-      console.log("Contact email sent successfully ✅");
-    } catch (emailError) {
-      console.error("Email sending failed ❌:", emailError.message);
-    }
+    // Fire-and-forget: the visitor's message is already safely saved in
+    // Mongo, so their submission shouldn't have to wait on Gmail's SMTP
+    // round-trip (which can be slow, or hang, independent of this app).
+    // Not awaiting this means the response below goes out immediately;
+    // success/failure of the email is only ever logged server-side.
+    sendContactEmail({
+      name: contact.name,
+      email: contact.email,
+      subject: contact.subject,
+      message: contact.message,
+    })
+      .then(() => console.log("Contact email sent successfully ✅"))
+      .catch((emailError) =>
+        console.error("Email sending failed ❌:", emailError.message)
+      );
 
     return res.status(201).json({
       success: true,
