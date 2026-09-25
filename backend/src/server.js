@@ -40,6 +40,7 @@ if (missingEnvVars.length > 0) {
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.set("trust proxy", 1); 
 app.use(helmet());
 
 // The frontend's own origin, set per-environment. Locally this is unset and
