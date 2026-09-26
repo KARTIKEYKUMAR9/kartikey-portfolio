@@ -1,32 +1,9 @@
 import dotenv from "dotenv";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 dotenv.config();
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-
-  connectionTimeout: 15000,
-  greetingTimeout: 15000,
-  socketTimeout: 20000,
-});
-
-// Check SMTP connectivity when the backend starts.
-// This does NOT block the application from starting.
-transporter.verify((error, success) => {
-  if (error) {
-    console.error("SMTP connection check failed ❌:", error.message);
-  } else {
-    console.log("SMTP server is ready ✅");
-  }
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 function escapeHtml(str) {
   return str
@@ -52,8 +29,23 @@ function buildEmailHtml({
   return `
 <!DOCTYPE html>
 <html>
-  <body style="margin:0; padding:0; background-color:#0f172a; font-family:Arial, Helvetica, sans-serif;">
-    <div style="display:none; max-height:0; overflow:hidden;">
+  <body
+    style="
+      margin:0;
+      padding:0;
+      background-color:#0f172a;
+      font-family:Arial, Helvetica, sans-serif;
+    "
+  >
+
+    <!-- Preheader -->
+    <div
+      style="
+        display:none;
+        max-height:0;
+        overflow:hidden;
+      "
+    >
       New portfolio message from ${safeName}: ${safeSubject}
     </div>
 
@@ -62,7 +54,10 @@ function buildEmailHtml({
       width="100%"
       cellpadding="0"
       cellspacing="0"
-      style="background-color:#0f172a; padding:32px 16px;"
+      style="
+        background-color:#0f172a;
+        padding:32px 16px;
+      "
     >
       <tr>
         <td align="center">
@@ -72,12 +67,23 @@ function buildEmailHtml({
             width="100%"
             cellpadding="0"
             cellspacing="0"
-            style="max-width:480px; background-color:#1e293b; border-radius:16px; overflow:hidden;"
+            style="
+              max-width:480px;
+              background-color:#1e293b;
+              border-radius:16px;
+              overflow:hidden;
+            "
           >
 
             <!-- Header -->
             <tr>
-              <td style="background-color:#22d3ee; padding:20px 24px;">
+              <td
+                style="
+                  background-color:#22d3ee;
+                  padding:20px 24px;
+                "
+              >
+
                 <table
                   role="presentation"
                   width="100%"
@@ -85,6 +91,7 @@ function buildEmailHtml({
                   cellspacing="0"
                 >
                   <tr>
+
                     <td
                       style="
                         width:40px;
@@ -111,21 +118,28 @@ function buildEmailHtml({
                     >
                       New Portfolio Contact Message
                     </td>
+
                   </tr>
                 </table>
+
               </td>
             </tr>
 
             <!-- Visitor details -->
             <tr>
               <td style="padding:24px 24px 0 24px;">
+
                 <table
                   role="presentation"
                   width="100%"
                   cellpadding="0"
                   cellspacing="0"
-                  style="font-size:13px; color:#94a3b8;"
+                  style="
+                    font-size:13px;
+                    color:#94a3b8;
+                  "
                 >
+
                   <tr>
                     <td style="padding-bottom:6px;">
                       <strong style="color:#e2e8f0;">
@@ -138,7 +152,10 @@ function buildEmailHtml({
                     <td style="padding-bottom:2px;">
                       <a
                         href="mailto:${safeEmail}"
-                        style="color:#22d3ee; text-decoration:none;"
+                        style="
+                          color:#22d3ee;
+                          text-decoration:none;
+                        "
                       >
                         ${safeEmail}
                       </a>
@@ -156,13 +173,16 @@ function buildEmailHtml({
                       ${submittedAt}
                     </td>
                   </tr>
+
                 </table>
+
               </td>
             </tr>
 
             <!-- Subject -->
             <tr>
               <td style="padding:0 24px;">
+
                 <p
                   style="
                     margin:0 0 8px 0;
@@ -185,12 +205,14 @@ function buildEmailHtml({
                 >
                   ${safeSubject}
                 </p>
+
               </td>
             </tr>
 
             <!-- Message -->
             <tr>
               <td style="padding:0 24px;">
+
                 <p
                   style="
                     margin:0 0 8px 0;
@@ -215,6 +237,7 @@ function buildEmailHtml({
                   "
                 >
                   <tr>
+
                     <td
                       style="
                         padding:16px;
@@ -225,14 +248,17 @@ function buildEmailHtml({
                     >
                       ${safeMessage}
                     </td>
+
                   </tr>
                 </table>
+
               </td>
             </tr>
 
             <!-- Reply button -->
             <tr>
               <td style="padding:0 24px 24px 24px;">
+
                 <table
                   role="presentation"
                   width="100%"
@@ -240,6 +266,7 @@ function buildEmailHtml({
                   cellspacing="0"
                 >
                   <tr>
+
                     <td
                       align="center"
                       style="
@@ -247,6 +274,7 @@ function buildEmailHtml({
                         border-radius:10px;
                       "
                     >
+
                       <a
                         href="mailto:${safeEmail}?subject=${encodeURIComponent(
                           `Re: ${subject}`
@@ -262,9 +290,12 @@ function buildEmailHtml({
                       >
                         Reply to ${safeName}
                       </a>
+
                     </td>
+
                   </tr>
                 </table>
+
               </td>
             </tr>
 
@@ -276,6 +307,7 @@ function buildEmailHtml({
                   border-top:1px solid #334155;
                 "
               >
+
                 <p
                   style="
                     margin:0;
@@ -285,6 +317,7 @@ function buildEmailHtml({
                 >
                   Sent automatically from your portfolio's contact form.
                 </p>
+
               </td>
             </tr>
 
@@ -293,6 +326,7 @@ function buildEmailHtml({
         </td>
       </tr>
     </table>
+
   </body>
 </html>
 `;
@@ -336,16 +370,20 @@ export const sendContactEmail = async ({
     submittedAt,
   };
 
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER,
+  const { data, error } = await resend.emails.send({
+    from: "Portfolio <onboarding@resend.dev>",
+    to: [process.env.EMAIL_USER],
     replyTo: email,
-
     subject: `Portfolio Contact: ${subject}`,
-
     text: buildEmailText(templateData),
     html: buildEmailHtml(templateData),
-  };
+  });
 
-  await transporter.sendMail(mailOptions);
+  if (error) {
+    throw new Error(error.message || "Resend email failed");
+  }
+
+  console.log("Resend email sent successfully ✅:", data?.id);
+
+  return data;
 };
